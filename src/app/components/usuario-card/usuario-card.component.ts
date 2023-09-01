@@ -13,10 +13,6 @@ export class UsuarioCardComponent {
   userService = inject(UsuaariosService);
 
 
-  async delete() {
-    alert('Desea eliminar el usuario?');
-    let response = await this.userService.deletUser(this.miUsuario._id);
-  }
 
   async eliminar() {
     let response = await this.userService.deletUser(this.miUsuario._id);

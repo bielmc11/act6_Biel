@@ -19,7 +19,6 @@ export class HomeComponent {
       this.arrUsuarios = page1.results.concat(page2.results)        
     }catch(error){
       console.log(error)
-      
     }
   }
 
