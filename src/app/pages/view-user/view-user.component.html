@@ -1,0 +1,51 @@
+
+  
+  <div class="container mt-5 div_wrapper">
+    <div class="row">
+      <img [src]="usuario?.image" alt="perfil" class="col-12 col-md-5" />
+      <div class="col-12 col-md-6 mt-2 text_wrapper">
+        <h3>{{ usuario?.first_name }}</h3>
+        <h3 class="subname">{{ usuario?.last_name }}</h3>
+        <p class="mt-4">
+          <strong>Nombre de usuario: </strong>{{ usuario?.username }}
+        </p>
+        <p><strong>email: </strong>{{ usuario?.email }}</p>
+  
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+           <button
+            type="button"
+            class="btn btn-outline-primary"
+            [swal]="{
+              title: '¿Desea eliminar el usuario permanentemente?',
+              showConfirmButton: false,
+              showCloseButton: true,
+              showCancelButton: true,
+              showDenyButton: true,
+              denyButtonText: 'Eliminar',
+              icon: 'question',
+              confirmButtonText: 'Acepto'
+            }"
+            (deny)="eliminar()"
+          >
+            Eliminar
+          </button>
+  
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            [routerLink]="['/updateuser', usuario?._id]"
+          >
+            Actualizar
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            [routerLink]="['/home']"
+          >
+            Volver al listado
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+

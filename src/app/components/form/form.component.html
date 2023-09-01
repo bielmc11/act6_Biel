@@ -1,0 +1,35 @@
+ <div class="container pt-4  container_wrapper">
+        <form [formGroup]="userForm" class="w-75 mx-auto" (ngSubmit)="getDataForm()">
+            <div class="div_wrapper">
+                <label for="first_name" class="form-label">Nombre Usuario:</label>
+                <input type="text" name="first_name" id="first_name" class="form-control" formControlName="first_name">
+                <p *ngIf="checkControl('first_name', 'required')" class="error">Campo obligatorio</p>  
+            </div>
+            <div  class="div_wrapper">
+                <label for="last_name" class="form-label">Apellido Usuario:</label>
+                <input type="text" name="last_name" id="last_name" class="form-control" formControlName="last_name">
+                <p *ngIf="checkControl('last_name', 'required')" class="error">Campo obligatorio</p>
+            </div>
+            <div  class="div_wrapper">
+                <label for="username" class="form-label">Apellido Usuario:</label>
+                <input type="text" name="username" id="username" class="form-control" formControlName="username">
+                <p *ngIf="checkControl('username', 'required')" class="error">Campo obligatorio</p>
+            </div>
+            <div  class="div_wrapper">
+                <label for="email" class="form-label">Email:</label>
+                <input type="text" name="email" id="email" class="form-control" formControlName="email">
+                <p *ngIf="checkControl('email', 'required')" class="error">Campo obligatorio</p>
+                <p *ngIf="checkControl('email', 'pattern')" class="error">Formato incorrecto</p>
+            </div>
+            <div  class="div_wrapper">
+                <label for="imagen" class="form-label">Imagen:</label>
+                <input type="text" name="imagen" id="imagen" class="form-control" formControlName="imagen">
+                <p *ngIf="checkControl('imagen', 'required')" class="error">Campo obligatorio</p>
+            </div>
+            
+            <input type="submit" class="btn btn-outline-primary mt-3" [disabled]="!userForm.valid" >
+        </form>
+    </div>
+
+
+

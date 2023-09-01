@@ -1,0 +1,26 @@
+<div class="card shadow text-center card_wrapper">
+    <img [src]="miUsuario?.image" alt="perfil" class="">
+    
+    <h5 class="card-title ">{{miUsuario?.first_name}} {{miUsuario?.last_name}} </h5>
+    
+    <div class="btn_box">
+        <div class="btn_wraper">
+            <div class="btn_only">
+                <img src="./assets/search_FILL0_wght400_GRAD0_opsz48.svg" alt="search" [routerLink]="['/usuario', miUsuario?._id]">
+                <p>Ver</p>
+            </div>
+            <div class="btn_only">
+                <img src="./assets/update_FILL0_wght400_GRAD0_opsz48.svg" [routerLink]="['/updateuser', miUsuario?._id]" alt="update">
+                <p>Actualizar</p>
+            </div>
+            <div class="btn_only">
+                <img src="./assets/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="delete" [swal]="{ title: '¿Desea eliminar el usuario permanentemente?',showConfirmButton:false , showCloseButton:true, showCancelButton:true,showDenyButton: true ,denyButtonText: 'Eliminar',  icon: 'question', confirmButtonText: 'Acepto'}"
+                (deny)="eliminar()"
+                >
+                
+                <p>Borrar</p>
+            </div>
+        </div>
+    </div>
+
+</div>
