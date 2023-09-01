@@ -12,9 +12,6 @@ export class UsuarioCardComponent {
   @Input() miUsuario: Usuario_in | any;
   userService = inject(UsuaariosService);
 
-  ngOnInit() {
-    /* console.log(this.miUsuario) */
-  }
 
   async delete() {
     alert('Desea eliminar el usuario?');
